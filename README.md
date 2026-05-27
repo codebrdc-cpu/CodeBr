@@ -27,4 +27,4 @@ Evoluir em comunidade
 💬 Comunidade
 
 Discord:
-[https://discord.gg/jCbvWC2jEd](https://discord.gg/v7vk8dtwgZ)
+https://discord.gg/v7vk8dtwgZ
