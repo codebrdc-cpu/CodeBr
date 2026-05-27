@@ -1,0 +1,60 @@
+import java.util.Scanner;
+
+public class CaixaEletronico {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        // 1. Pede nome do usuario
+        System.out.print("Digite o nome do usuário: ");
+        String nome = scanner.nextLine();
+
+        // 2. Pedir saldo
+        System.out.print("Digite o saldo inicial da conta: R$ ");
+        double saldoInicial = scanner.nextDouble();
+
+        // Variáveis
+        double saldoFinal = saldoInicial;
+        double valorOperacao = 0;
+
+        // 3. Mostrar o menu
+        System.out.println("\n--- MENU DE OPÇÕES ---");
+        System.out.println("1 -> Sacar");
+        System.out.println("2 -> Depositar");
+        System.out.print("Escolha sua opção (1 ou 2): ");
+
+        int opcao = scanner.nextInt();
+
+        // 4. Lógica
+        if (opcao == 1) {
+
+            System.out.print("Digite o valor do saque: R$ ");
+            valorOperacao = scanner.nextDouble();
+
+            if (valorOperacao <= saldoFinal) {
+                saldoFinal = saldoFinal - valorOperacao;
+            } else {
+                System.out.println("\nSaldo insuficiente!");
+                valorOperacao = 0;
+            }
+        }
+
+        if (opcao == 2) {
+
+            System.out.print("Digite o valor do depósito: R$ ");
+            valorOperacao = scanner.nextDouble();
+
+            saldoFinal = saldoFinal + valorOperacao;
+        }
+
+        // Extrato
+        System.out.println("\n--- EXTRATO FINAL ---");
+        System.out.println("Nome do usuário: " + nome);
+        System.out.println("Saldo inicial: R$ " + saldoInicial);
+        System.out.println("Valor sacado ou depositado: R$ " + valorOperacao);
+        System.out.println("Saldo final da conta: R$ " + saldoFinal);
+
+        scanner.close();
+    }
+}
