@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class    MercadoCodeBR {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        // Produtos e preços
+        double arroz = 25.0;
+        double feijao = 10.0;
+        double coca = 8.0;
+
+        // Mostrar produtos
+        System.out.println("=== MERCADO CODE BR ===");
+        System.out.println("Arroz: R$" + arroz);
+        System.out.println("Feijão: R$" + feijao);
+        System.out.println("Coca-Cola: R$" + coca);
+
+        // Pedir quantidades
+        System.out.print("Quantidade de Arroz: ");
+        int qtdArroz = scanner.nextInt();
+
+        System.out.print("Quantidade de Feijão: ");
+        int qtdFeijao = scanner.nextInt();
+
+        System.out.print("Quantidade de Coca-Cola: ");
+        int qtdCoca = scanner.nextInt();
+
+        // Calcular total
+        double total =
+                (qtdArroz * arroz) +
+                (qtdFeijao * feijao) +
+                (qtdCoca * coca);
+
+        // Aplicar desconto
+        if (total > 100) {
+            double desconto = total * 0.10;
+            total -= desconto;
+
+            System.out.println("\nDesconto aplicado: R$" + desconto);
+        }
+
+        // Mostrar total final
+        System.out.printf("Total da compra: R$%.2f%n", total);
+
+        scanner.close();
+    }
+}
